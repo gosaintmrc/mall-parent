@@ -16,6 +16,7 @@
     </description>
     <modules>
         <module>mall-service-product</module>
+        <module>mall-service-file</module>
     </modules>
 
     <dependencies>

@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.gosaint.dao.BrandMapper;
 import com.gosaint.product.domain.Brand;
 import com.gosaint.service.BrandService;
@@ -70,5 +72,28 @@ public class BrandServiceImpl implements BrandService {
     @Override
     public void delete(final Integer id) {
         brandMapper.deleteByPrimaryKey(id);
+    }
+
+    @Override
+    public PageInfo<Brand> findPage(final int page, final int size) {
+        PageHelper.startPage(page, size);
+        return new PageInfo<>(brandMapper.selectAll());
+    }
+
+    @Override
+    public PageInfo<Brand> findPage(final Brand brand, final int page, final int size) {
+        PageHelper.startPage(page, size);
+        Example example=createExample(brand);
+        return new PageInfo<>(brandMapper.selectByExample(example));
+    }
+
+    /**
+     * sample sql= SELECT brand.* FROM tb_brand brand,tb_category_brand tcb WHERE brand.id=tcb.brand_id AND tcb.category_id=558
+     * @param categoryId 商品分类id
+     * @return
+     */
+    @Override
+    public List<Brand> findByCategory(final Integer categoryId) {
+        return brandMapper.findByCategoryId(categoryId);
     }
 }

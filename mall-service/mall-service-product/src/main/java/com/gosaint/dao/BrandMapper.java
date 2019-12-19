@@ -1,6 +1,10 @@
 package com.gosaint.dao;
 
+import java.util.List;
+
 import com.gosaint.product.domain.Brand;
+
+import org.apache.ibatis.annotations.Select;
 
 import tk.mybatis.mapper.common.Mapper;
 
@@ -11,4 +15,11 @@ import tk.mybatis.mapper.common.Mapper;
  * @Modified By:
  */
 public interface BrandMapper extends Mapper<Brand> {
+    /**
+     * 根据分类id查询商品品牌
+     * @param categoryId
+     * @return
+     */
+    @Select("SELECT brand.* FROM tb_brand brand,tb_category_brand tcb WHERE brand.id=tcb.brand_id AND tcb.category_id=#{categoryId}")
+    List<Brand> findByCategoryId(Integer categoryId);
 }

@@ -2,6 +2,7 @@ package com.gosaint.controller;
 
 import java.util.List;
 
+import com.github.pagehelper.PageInfo;
 import com.gosaint.entity.Result;
 import com.gosaint.entity.StatusCode;
 import com.gosaint.product.domain.Brand;
@@ -100,6 +101,38 @@ public class BrandController {
     public Result<List<Brand>> findList(@RequestBody(required = false) Brand brand){
         List<Brand> list = brandService.findList(brand);
         return new Result<List<Brand>>(true,StatusCode.OK,"查询成功",list);
+    }
+
+    /***
+     * 分页搜索实现
+     * @param page:当前页
+     * @param size:每页显示多少条
+     * @return
+     */
+    @GetMapping(value = "/search/{page}/{size}" )
+    public Result<PageInfo> findPage(@PathVariable  int page, @PathVariable  int size){
+        PageInfo<Brand> pageInfo = brandService.findPage(page, size);
+        return new Result<PageInfo>(true,StatusCode.OK,"分页查询成功",pageInfo);
+    }
+
+    /***
+     * 分页搜索实现
+     * @param brand
+     * @param page
+     * @param size
+     * @return
+     */
+    @PostMapping(value = "/search/{page}/{size}" )
+    public Result<PageInfo> findPage(@RequestBody(required = false) Brand brand, @PathVariable  int page, @PathVariable  int size){
+        //执行搜索
+        PageInfo<Brand> pageInfo = brandService.findPage(brand, page, size);
+        return new Result(true,StatusCode.OK,"查询成功",pageInfo);
+    }
+
+    @GetMapping("/category/{id}")
+    public Result<List<Brand>> findBrandByCategoryId(@PathVariable(value = "id")Integer id){
+        List<Brand> brandList = brandService.findByCategory(id);
+        return new Result<>(true,StatusCode.OK,"根据分类id查询品牌成功",brandList);
     }
 
 }

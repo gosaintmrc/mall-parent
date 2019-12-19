@@ -1,0 +1,23 @@
+{
+    "skuList": [
+        {
+            "alertNum": 10,
+            "brandName": "华为AAA",
+            "categoryId": 128,
+            "commentNum": 3306,
+            "image": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-11-pro-select-2019-family?wid=882&amp;hei=1058&amp;fmt=jpeg&amp;qlt=80&amp;op_usm=0.5,0.5&amp;.v=1567812930312",
+            "images": "",
+            "num": 2208,
+            "price": 6199,
+            "saleNum": 10090,
+            "sn": "No10001",
+            "spec": "{\"颜色\":\"绿色\",\"网络\":\"5G\"}",
+            "weight": 228
+        }
+    ],
+    "spu": {
+        "brandId":8557,
+        "caption": "华为手机大促销"
+
+    }
+}

@@ -7,10 +7,9 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 /****
- * @Author:www.itheima.com
+ * @Author:gosaint
  * @Description:Brand构建
- * @Date www.itheima.com 19:13
- *****/
+*/
 @ApiModel(description = "Brand",value = "Brand")
 @Table(name="tb_brand")
 public class Brand implements Serializable{
@@ -19,7 +18,8 @@ public class Brand implements Serializable{
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-	private Integer id;//品牌id
+	/** 品牌id*/
+	private Integer id;
 	@ApiModelProperty(value = "品牌名称",required = false)
     @Column(name = "name")
 	private String name;//品牌名称

@@ -2,6 +2,7 @@ package com.gosaint.service;
 
 import java.util.List;
 
+import com.github.pagehelper.PageInfo;
 import com.gosaint.product.domain.Brand;
 
 /**
@@ -48,6 +49,30 @@ public interface BrandService {
      * @param id
      */
     void delete(Integer id);
+
+    /**
+     * 分页查询
+     * @param page
+     * @param size
+     * @return
+     */
+    PageInfo<Brand> findPage(int page,int size);
+
+    /***
+     * 多条件分页查询
+     * @param brand
+     * @param page
+     * @param size
+     * @return
+     */
+    PageInfo<Brand> findPage(Brand brand, int page, int size);
+
+    /**
+     * 根据商品分类id查询商品品牌
+     * @param categoryId 商品分类id
+     * @return
+     */
+    List<Brand> findByCategory(Integer categoryId);
 
 
 
