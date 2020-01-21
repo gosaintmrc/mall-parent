@@ -116,7 +116,7 @@ public class SpuServiceImpl implements SpuService {
     @Override
     public void audit(final Long id) {
         Spu spu = spuMapper.selectByPrimaryKey(id);
-        if (spu.getIsDelete().equalsIgnoreCase("1")) {
+        if ("1".equalsIgnoreCase(spu.getIsDelete())) {
             throw new RuntimeException("无法对已经删除的商品审核");
         }
         /** 审核通过*/

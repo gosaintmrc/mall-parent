@@ -16,6 +16,7 @@
     </description>
     <modules>
         <module>mall-service-product-api</module>
+        <module>mall-service-search-api</module>
     </modules>
 
     <dependencies>

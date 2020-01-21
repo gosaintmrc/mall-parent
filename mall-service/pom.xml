@@ -17,6 +17,8 @@
     <modules>
         <module>mall-service-product</module>
         <module>mall-service-file</module>
+        <module>mall-service-canal</module>
+        <module>mall-service-search</module>
     </modules>
 
     <dependencies>

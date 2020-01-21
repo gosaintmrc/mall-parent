@@ -1,0 +1,25 @@
+server:
+  port: 18085
+spring:
+  application:
+    name: search
+  data:
+    elasticsearch:
+      cluster-nodes: 127.0.0.1:9300
+      cluster-name: elasticsearch
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7001/eureka
+  instance:
+    prefer-ip-address: true
+feign:
+  httpclient:
+    connection-timeout: 6000
+
+#ribbon的超时时间
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000

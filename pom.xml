@@ -19,6 +19,7 @@
         <module>mall-register-center</module>
         <module>mall-common</module>
         <module>mall-common-dao</module>
+        <module>mall-nginx-lua-test</module>
     </modules>
 
 
