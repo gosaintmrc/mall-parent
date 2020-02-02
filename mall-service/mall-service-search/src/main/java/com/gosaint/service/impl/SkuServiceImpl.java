@@ -184,7 +184,9 @@ public class SkuServiceImpl implements SkuService {
     private Integer convertPage(Map<String, String> map) {
         if (map != null) {
             String pageNum = map.get("pageNum");
-            return Integer.parseInt(pageNum);
+            if(!StringUtils.isEmpty(pageNum)){
+                return Integer.parseInt(pageNum);
+            }
         }
         return 1;
     }

@@ -15,11 +15,13 @@
         <module>mall-gateway</module>
         <module>mall-service</module>
         <module>mall-service-api</module>
-        <module>mall-web</module>
         <module>mall-register-center</module>
         <module>mall-common</module>
         <module>mall-common-dao</module>
-        <module>mall-nginx-lua-test</module>
+        <module>mall-webs</module>
+        <module>mall-search-web</module>
+        <module>mall-web-search</module>
+        <module>mall-getway</module>
     </modules>
 
 

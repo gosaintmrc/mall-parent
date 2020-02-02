@@ -19,6 +19,7 @@
         <module>mall-service-file</module>
         <module>mall-service-canal</module>
         <module>mall-service-search</module>
+        <module>mall-service-user</module>
     </modules>
 
     <dependencies>

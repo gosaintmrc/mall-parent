@@ -1,0 +1,40 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: getway-web
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*" #允许所有的域
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+      routes:
+        - id: mall-goods-route
+          uri: http://localhost:18081
+          predicates:
+          - Host= cloud.gosaint.com**
+
+
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7001/eureka
+  instance:
+    prefer-ip-address: true
+management:
+  endpoint:
+    gateway:
+      enabled: true
+    web:
+      exposure:
+        include: true
+
