@@ -789,4 +789,9 @@ public class BCrypt {
 		}
 		return ret == 0;
 	}
+
+	public static void main(String[] args) {
+		String hashpw = hashpw("caozg", "caozg&$@@&");
+		System.out.printf(hashpw);
+	}
 }
