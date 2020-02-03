@@ -1,5 +1,7 @@
 package com.mall.user.service.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import com.mall.domain.User;
@@ -24,5 +26,10 @@ public class UserServiceImpl implements UserService {
         User user = userDao.selectByPrimaryKey(username);
         System.out.println(user);
         return user;
+    }
+
+    @Override
+    public List<User> findAll() {
+        return userDao.selectAll();
     }
 }

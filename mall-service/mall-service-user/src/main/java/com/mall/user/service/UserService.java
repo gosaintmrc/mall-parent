@@ -1,5 +1,7 @@
 package com.mall.user.service;
 
+import java.util.List;
+
 import com.mall.domain.User;
 
 /**
@@ -11,4 +13,6 @@ import com.mall.domain.User;
 public interface UserService {
 
     User findById(String username);
+
+    List<User> findAll();
 }

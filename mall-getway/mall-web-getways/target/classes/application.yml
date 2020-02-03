@@ -19,7 +19,14 @@ spring:
         - id: mall-goods-route
           uri: http://localhost:18081
           predicates:
-          - Host= cloud.gosaint.com**
+          - Path= /goods/**
+        - id: mall-user-route
+          uri: http://localhost:18087
+          predicates:
+          - Path= /api/address/**,/api/areas/**,/api/cities/**,/api/provinces/**,/api/user/**
+          filters:
+          - StripPrefix=1
+
 
 
 
